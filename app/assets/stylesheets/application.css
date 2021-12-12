@@ -14,11 +14,7 @@
  *= require_self
  */
 
-*  {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 body {
   background-color: #fff;
@@ -29,11 +25,29 @@ body {
   margin: 33px;
 }
 
-p {
+p ,ol,ul,td{
   font-family: verdana, arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
   margin: 33px;
 }
 
 a {
   color: #6c6b6b;
+}
+th {
+  padding-bottom: 5px;
+}
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.field,.actions {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
 }
