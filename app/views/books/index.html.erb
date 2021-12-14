@@ -1,3 +1,4 @@
+<p id=notice><%= notice %></p>
 <h1>Books</h1>
 <table>
   <thead>
@@ -8,23 +9,26 @@
     </tr>
   </thead>
   <tbody>
-  <% @books.each do |book|%>
     <tr>
+  <% @books.each do |book|%>
       <td><%= book.title%></td>
       <td><%= book.body%></td>
       <td><%= link_to "Show", book_path(book) %></td>
       <td><%= link_to "Edit", edit_book_path(book) %></td>
       <td><%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "本当に削除しますか？"%></td>
     </tr>
-  </tbody>
   <% end %>
+  </tbody>
 </table>
 <h2>New book</h2>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-  <% @book.errors.full_messages.each do|meassage|%>
-    <%= meassage %>
+<div id="error_explanation">
+   <h2><%= @book.errors.count %>error exit</h2>
+   <ul><% @book.errors.full_messages.each do|meassage|%>
+    <li><%= meassage %></li>
   <% end %>
+</ul>
+</div>
 <% end %>
 
 <!-- form_with-->
