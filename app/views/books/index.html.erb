@@ -21,10 +21,13 @@
 </table>
 <h2>New book</h2>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-  <% @book.errors.full_messages.each do|meassage|%>
-    <%= meassage %>
+<div id="error_explanation">
+   <h2><%= @book.errors.count %>件のエラーが発生しました</h2>
+   <ul><% @book.errors.full_messages.each do|meassage|%>
+    <li><%= meassage %></li>
   <% end %>
+</ul>
+</div>
 <% end %>
 
 <!-- form_with-->

@@ -14,11 +14,12 @@
 
 <!--form_with-->
 <%= form_with model:@book, local:true do |f| %>
-<div class="field"><label for="title">本のタイトル</label>
+<div class="field"><label for="book_title">本のタイトル</label>
 <%= f.text_field :title %>
 </div>
 
-<div class="field"><label for="body">感想</label>
+<div class="field"
+><label for="book_body">感想</label>
 <%= f.text_area :body %>
 </div>
 
