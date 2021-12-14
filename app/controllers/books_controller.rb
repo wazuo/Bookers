@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to book_path(@book.id),notice:'createに成功しました'
+      redirect_to book_path(@book.id),notice:'createに成功しました[successfully]'
     else @books = Book.all
       render :index
     end
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      redirect_to book_path(book),notice:'updateに成功しました'
+      redirect_to book_path(@book),notice:'updateに成功しました[successfully]'
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    redirect_to books_path
+    redirect_to books_path,notice:'destroyに成功しました[successfully]'
   end
 
   private
