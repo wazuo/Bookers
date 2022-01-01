@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    redirect_to books_path,notice:'destroyに成功しました[successfully]'
+    redirect_to books_path
   end
 
   private
